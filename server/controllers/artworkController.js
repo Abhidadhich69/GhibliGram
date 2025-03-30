@@ -35,10 +35,10 @@ export const getArtworks = async (req, res) => {
 
     // Format the response to match the required structure
     const formattedArtworks = artworks.map((artwork, index) => ({
-      id: index + 1, // Assign a unique sequential ID
-      image: artwork.image, // Fetch image from the database
+      id: artwork._id, // Assign a unique sequential ID
+      image: artwork.imageUrl, // Fetch image from the database
       height: heightOptions[Math.floor(Math.random() * heightOptions.length)], // Random height
-      insta: artwork.insta || "unknown", // Dynamic insta, fallback to "unknown" if missing
+      insta: artwork.instaId , // Dynamic insta, fallback to "unknown" if missing
     }));
 
     res.status(200).json(formattedArtworks);
