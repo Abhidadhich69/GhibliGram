@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors({origin:"https://ghiblimatic.vercel.app"}));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
